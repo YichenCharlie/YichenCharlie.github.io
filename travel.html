@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yichen's travel notebook: places visited in China and around the world.">
+  <title>Travel notebook | Yichen Feng</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/travel.css">
+  <script src="assets/travel.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="masthead"><a class="wordmark" href="./" aria-label="Yichen's homepage">yichen<span>.space</span><span class="logo-star" aria-hidden="true">✳</span></a><div class="masthead-right"><span>A PERSONAL PLACE ON THE WORLD WIDE WEB</span><span class="web-address">YichenCharlie.github.io</span></div></header>
+    <nav class="navigation" aria-label="Main navigation"><div><a href="./">Home</a><span>|</span><a href="./#education">Education</a><span>|</span><a href="./#projects">Projects</a><span>|</span><a href="./#activity">Activity</a><span>|</span><a href="travel.html" aria-current="page">Travel</a></div><span class="nav-note">a little further from home ✦</span></nav>
+    <div class="breadcrumb"><span>You are here: <a href="./">Yichen's space</a> / <strong>Travel notebook</strong></span><a href="./">← Back home</a></div>
+    <main id="main" class="travel-main">
+      <section class="travel-intro"><div><p class="travel-kicker">OFFLINE ADVENTURES / A PERSONAL ATLAS</p><h1>A little more of the world.</h1><p>Some of my favorite things happen away from a screen.<br>This is a growing collection of the places I've been.</p></div><div class="travel-stamp" aria-hidden="true"><span>YICHEN'S</span><strong>TRAVEL<br>NOTEBOOK</strong><span>PLACES &amp; MEMORIES</span></div></section>
+      <section id="editor" class="travel-editor" aria-labelledby="editor-title" hidden>
+        <h2 id="editor-title">Edit your travel map</h2>
+        <p>Click a region on either map, or select places below. These changes are a preview in this browser. Download the file and replace <code>data/travel.json</code> in your project to save them for the website.</p>
+        <div class="editor-actions"><button id="download-travel" type="button" disabled>Download travel.json</button><button id="reset-travel" type="button" disabled>Reset to saved places</button><label class="import-label">Import travel.json <input id="import-travel" type="file" accept=".json,application/json" disabled></label></div>
+        <p id="editor-status" role="status">Loading saved places…</p>
+        <details><summary>Select places from a list</summary><label class="search-label" for="place-search">Find a place</label><input id="place-search" type="search" placeholder="Shanghai, 上海, Japan…"><div id="place-options" class="place-options"></div></details>
+      </section>
+      <p id="travel-error" role="alert" hidden></p>
+      <section class="atlas-section" aria-labelledby="china-heading">
+        <h2 id="china-heading" class="section-title">Closer to home <span>01 / CHINA</span></h2>
+        <div class="atlas-toolbar"><div><h3>Footprints across China</h3><p>My travels, one province or region at a time.</p></div><span id="china-count" class="atlas-count">Loading…</span></div>
+        <div class="map-frame china-frame"><svg id="china-map" viewBox="0 0 900 540" role="group" aria-label="China travel map" aria-describedby="china-map-help"></svg><span class="map-compass" aria-hidden="true">N<br>↑</span><span class="map-corner" aria-hidden="true">FIELD NOTES / 01</span></div>
+        <div class="map-caption"><p id="china-map-help">Select a region to see its name.</p><div class="map-legend"><span><i class="visited-key"></i> Visited</span><span><i></i> Not marked</span></div></div>
+        <p id="china-selection" class="map-selection" aria-live="polite">Explore the map, or browse my places below.</p>
+        <div id="china-places" class="visited-places" aria-label="Visited places in China"></div>
+      </section>
+      <section class="atlas-section" aria-labelledby="world-heading">
+        <h2 id="world-heading" class="section-title">A wider world <span>02 / WORLD</span></h2>
+        <div class="atlas-toolbar"><div><h3>Beyond the familiar</h3><p>A growing atlas of countries and regions I've visited.</p></div><span id="world-count" class="atlas-count">Loading…</span></div>
+        <div class="map-frame world-frame"><svg id="world-map" viewBox="0 0 960 450" role="group" aria-label="World travel map" aria-describedby="world-map-help"></svg><span class="map-corner" aria-hidden="true">FIELD NOTES / 02</span></div>
+        <div class="map-caption"><p id="world-map-help">Select a country or region to see its name.</p><div class="map-legend"><span><i class="visited-key"></i> Visited</span><span><i></i> Not marked</span></div></div>
+        <p id="world-selection" class="map-selection" aria-live="polite">Explore the map, or browse my places below.</p>
+        <div id="world-places" class="visited-places" aria-label="Visited places around the world"></div>
+      </section>
+      <div class="travel-closing"><span aria-hidden="true">✳</span><p>More places. More stories. Room for the next adventure.</p><a href="./">Back to my space ↗</a></div>
+      <noscript><p>Enable JavaScript to explore the maps. My recorded places are Shanghai and China.</p></noscript>
+    </main>
+    <footer><span>© <span id="year">2026</span> Yichen Feng</span><span>Maps: <a href="https://datav.aliyun.com/portal/school/atlas/area_selector">DataV.GeoAtlas</a> · <a href="https://www.naturalearthdata.com/">Natural Earth</a></span><a href="credits.html">Colophon &amp; credits</a></footer>
+  </div>
+</body>
+</html>

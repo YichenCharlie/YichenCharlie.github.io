@@ -1,0 +1,239 @@
+:root{--navy:#143e80;--link:#204f89;--blue:#6494bd;--border:#a4bad0;--ink:#263648;--muted:#667381;--orange:#f5d6b3;--orange-ink:#9a4c1e;--paper:#fffefa;--level0:#edf0ed;--level1:#c5d8b8;--level2:#91b67e;--level3:#5c8e51;--level4:#356137}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:#e9e9e2;background-image:radial-gradient(#b5bcc04d .65px,transparent .65px);background-size:4px 4px;color:var(--ink);font:13px/1.6 Arial,Helvetica,sans-serif}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #bf611f;outline-offset:4px}
+button{font:inherit}
+h1,h2,h3,p{margin:0}
+button,a,summary{-webkit-tap-highlight-color:transparent}
+.site-shell{max-width:1100px;margin:36px auto;background:var(--paper);border:1px solid #adb7bc;box-shadow:5px 5px 0 #c6cbc8}
+.masthead{background:var(--navy);color:#fff;min-height:111px;display:flex;align-items:center;justify-content:space-between;padding:24px 34px}
+.wordmark{font:bold 36px/1 Georgia,'Times New Roman',serif;letter-spacing:-1.8px;color:white;position:relative}
+.wordmark:hover{text-decoration:none}
+.wordmark>span:first-child{color:#cedeed;font-weight:normal}
+.logo-star{color:#f4ce91;font:30px Georgia,serif;position:absolute;top:-8px;right:-37px}
+.masthead-right{text-align:right;display:grid;gap:9px;font:9px/1.5 'Courier New',monospace;letter-spacing:1px;color:#c7d7ef}
+.web-address{font-size:12px;letter-spacing:0;color:#fff}
+.navigation{background:#6595bd;display:flex;justify-content:space-between;padding:7px 27px;color:#fff;font-size:12px}
+.navigation>div{display:flex;gap:17px}
+.navigation a{color:white;font-weight:bold}
+.navigation>div>span{opacity:.55}
+.nav-note{font-style:italic;color:#eff6fa}
+.nav-note span{color:#ffe1aa;margin-left:7px}
+.breadcrumb{display:flex;justify-content:space-between;margin:0 27px;padding:13px 0;border-bottom:1px dotted #b5bec5;font-size:10px;color:var(--muted)}
+.breadcrumb strong{font-weight:normal;color:var(--ink)}
+.layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:30px;padding:25px 27px 30px}
+.sidebar{min-width:0}
+.profile{padding:0 0 19px}
+.profile h1{font-size:25px;letter-spacing:-.8px;line-height:1.2;color:#182c45}
+.profile-handle{font:11px 'Courier New',monospace;color:var(--muted);margin:7px 0 18px}
+.profile-intro{display:flex;gap:18px;align-items:flex-start}
+.portrait{width:139px;height:163px;flex-shrink:0;background:#e8eef0;border:1px solid #b2c1cc;box-shadow:inset 0 0 0 5px #f8faf8;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.portrait svg{width:109px;height:109px;image-rendering:pixelated}
+.portrait>span{font:8px 'Courier New',monospace;letter-spacing:1px;color:#4e6b86}
+.profile-summary{padding-top:3px;font-size:12px;line-height:1.5}
+.profile-summary>p:first-child{font:italic 16px/1.35 Georgia,serif;margin-bottom:16px}
+.small-label{font:8px/1.5 'Courier New',monospace;letter-spacing:1px;color:#77828a}
+.profile-summary .quiet{font-size:11px;margin-top:5px}
+.profile-links{text-align:center;font-size:10px;padding-top:13px}
+.profile-links a{font-weight:bold}
+.panel{border:1px solid var(--border);margin-bottom:20px}
+.panel-title{background:var(--blue);color:#fff;padding:4px 10px;font-size:12px;font-weight:bold;line-height:1.5;letter-spacing:.1px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;padding:10px 11px;gap:14px 4px;font-size:10px}
+.contact-grid>a,.contact-grid>.unfilled{display:flex;align-items:center;gap:5px}
+.contact-grid>a{font-weight:bold}
+.contact-grid>a>span,.contact-grid>.unfilled>span:first-child{font:bold 15px/1 'Courier New',monospace;color:#456a8e}
+.unfilled{color:#75818c}
+.resume-button{display:flex;align-items:center;gap:5px;border:1px solid #b6c6d2;background:#edf2f6;padding:5px 6px;font:inherit;font-weight:bold;color:#506b82;text-align:left;cursor:not-allowed}
+.resume-button>span:first-child{font-size:15px;line-height:1}
+.resume-status{margin-left:auto;font:7px 'Courier New',monospace;letter-spacing:.4px;color:#647583}
+.project-entry{padding:4px 0 18px}
+.project-entry+.project-entry{border-top:1px dotted #bdc6cc;padding-top:18px}
+.project-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px}
+.project-heading h3{font-size:14px;line-height:1.5}
+.project-category{font:8px 'Courier New',monospace;color:#7b644d;white-space:nowrap;letter-spacing:.5px}
+.project-entry>p{font-size:12px;line-height:1.75;color:#586c7a}
+.project-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-top:12px}
+.project-tags{display:flex;flex-wrap:wrap;gap:5px}
+.project-tags span{font-size:9px;padding:2px 7px;background:#edf2f5;border:1px solid #c8d3db;color:#516e86}
+.project-footer>a,.all-projects{font-size:10px;font-weight:bold}
+.all-projects{display:block;border-top:1px dotted #bdc6cc;padding-top:10px;text-align:right}
+.blank{margin-left:auto;margin-right:12px}
+.details dl{padding:3px;margin:0}
+.details dl>div{display:grid;grid-template-columns:86px 1fr;gap:3px;margin-bottom:3px}
+.details dl>div:last-child{margin-bottom:0}
+.details dt{background:#d8e5ef;color:#335b7c;padding:8px;font-weight:bold;font-size:11px}
+.details dd{background:#eef3f6;margin:0;padding:8px;font-size:11px}
+.quiet{color:var(--muted)}
+.directory>a{display:flex;gap:13px;padding:9px 12px;border-bottom:1px dotted #c5ced4;font-size:11px}
+.directory>a:last-child{border:0}
+.directory>a>span:first-child{font:10px/1.8 'Courier New',monospace;color:#7a8a97}
+.directory>a>span:last-child{margin-left:auto}
+.sidebar-note{margin:27px 16px 23px;display:flex;gap:14px;color:#6b7680;font:italic 12px/1.7 Georgia,serif}
+.pixel-star{font:33px Georgia,serif;color:#a56b32}
+.web-badges{display:flex;justify-content:center;gap:9px}
+.web-badges>span{font:8px/1.3 'Courier New',monospace;letter-spacing:1px;text-align:center;padding:4px 9px;border:3px double #74859a;color:#365375;background:#e8edf1}
+.web-badges>span:last-child{background:#f7ead6;color:#886335;border-color:#b39771}
+.web-badges b{font-size:10px}
+.main-column{min-width:0}
+.welcome{border:1px solid #354e69;outline:1px solid #bcc8cd;outline-offset:-5px;padding:24px 26px 17px;margin-bottom:25px;background:#f8f9f3}
+.welcome-kicker{font:9px 'Courier New',monospace;color:#627484;letter-spacing:2px;display:flex;justify-content:space-between}
+.welcome-kicker>span{font-size:23px;color:#b68b53;line-height:.7}
+.welcome h2{font:normal 31px/1.18 Georgia,'Times New Roman',serif;letter-spacing:-.7px;margin:14px 0 11px;color:#233b54}
+.welcome>p{font-size:11px;color:#627080}
+.welcome-bottom{display:flex;justify-content:space-between;gap:10px;margin-top:23px;padding-top:11px;border-top:1px dotted #b8c2c5;font-size:10px}
+.welcome-bottom>span{font-style:italic;color:#778187}
+.welcome-bottom>a{font-weight:bold}
+.content-section{margin-bottom:24px;scroll-margin-top:20px}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--orange);color:var(--orange-ink);padding:5px 10px;font-size:13px;line-height:1.55}
+.section-title>span{font:8px 'Courier New',monospace;letter-spacing:1px;white-space:nowrap;color:#8e633e}
+.section-body{padding:14px 10px 0}
+.section-body h3{font-size:12px}
+.about-body>h3{color:var(--orange-ink);margin-bottom:7px}
+.empty-writing{color:#7c8588;font:italic 12px Georgia,serif}
+.empty-writing>div{border-bottom:1px dotted #d4d8d6;height:14px;width:96%}
+.empty-writing>div:last-child{width:65%}
+.school{display:flex;gap:17px;align-items:center;padding:5px 0 19px}
+.school+.school{border-top:1px dotted #bdc6cc;padding-top:19px}
+.school-logo{width:68px;flex-shrink:0;min-height:68px;display:flex;align-items:center;justify-content:center}
+.school-logo img{display:block;object-fit:contain;width:64px;height:64px}
+.school-info{min-width:0;flex:1}
+.school-heading{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:4px}
+.school-heading h3{font-size:14px}
+.school-heading a{color:#253e5b}
+.status-tag{border:1px solid #b8c4ac;background:#f0f4e9;color:#617147;font:8px/1.6 'Courier New',monospace;padding:1px 6px;letter-spacing:.5px}
+.school-info>p{font-size:11px}
+.school-meta{color:#73808a;margin-top:4px;font-size:10px!important}
+.school-meta>span{padding:0 6px}
+.activity-body{padding-top:12px;display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+.activity-panel{min-width:0;padding:12px 10px;border:1px solid var(--border);background:#fffefa}
+.platform-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-bottom:8px;border-bottom:1px solid #c1cbd1}
+.platform-heading h3{color:var(--link);font-size:13px}
+.leetcode .platform-heading h3{color:var(--orange-ink)}
+.activity-body noscript{grid-column:1/-1}
+.activity-period{margin-left:auto;font:8px 'Courier New',monospace;letter-spacing:.5px;color:#74818a;margin-bottom:0}
+.activity-heading{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:start;gap:8px;margin:15px 0 13px}
+.activity-heading h3{font-size:12px}
+.activity-heading p{font-size:10px;margin-top:4px}
+.activity-heading>a{font-size:10px;white-space:nowrap}
+.chart-scroll{overflow-x:auto;padding-bottom:5px;min-height:104px;scrollbar-width:thin}
+.heatmap{display:grid;grid-template-rows:14px repeat(7,8px);grid-auto-columns:minmax(7px,1fr);grid-auto-flow:column;gap:3px;min-width:553px;padding:2px 0 2px 25px;position:relative}
+.heatmap .month{font:8px/1 'Courier New',monospace;color:#657782;white-space:nowrap;overflow:visible}
+.heatmap .day{border:0;border-radius:1px;background:var(--level0);min-width:0;padding:0;width:100%;height:8px;position:relative}
+.heatmap .day[data-level="1"]{background:var(--level1)}
+.heatmap .day[data-level="2"]{background:var(--level2)}
+.heatmap .day[data-level="3"]{background:var(--level3)}
+.heatmap .day[data-level="4"]{background:var(--level4)}
+.heatmap .day:hover{outline:1px solid #243c51;outline-offset:1px}
+.heatmap .pad{visibility:hidden}
+.heatmap .weekday{position:absolute;left:0;font:8px/1 'Courier New',monospace;color:#71808b}
+.heatmap .weekday.mon{top:29px}
+.heatmap .weekday.wed{top:51px}
+.heatmap .weekday.fri{top:73px}
+.chart-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:8px;color:#75818a;margin-top:7px}
+.legend{display:flex;align-items:center;gap:3px;white-space:nowrap}
+.legend i{width:8px;height:8px;background:var(--level0)}
+.legend i:nth-of-type(2){background:var(--level1)}
+.legend i:nth-of-type(3){background:var(--level2)}
+.legend i:nth-of-type(4){background:var(--level3)}
+.legend i:nth-of-type(5){background:var(--level4)}
+.leetcode{--level0:#f1eee7;--level1:#f4dfb2;--level2:#e5ba74;--level3:#cc8f3f;--level4:#9d6322}
+.chart-message{padding:25px 14px;background:#f0f3f4;color:#61717d;font-size:11px;border:1px dashed #bfccd3}
+.empty-section{display:flex;align-items:center;gap:13px;padding-top:18px;padding-bottom:4px}
+.empty-icon{font:33px Georgia,serif;color:#8f9eaa}
+.empty-section h3{font-size:11px}
+.empty-section p{font-size:10px;color:#7a858d;margin-top:3px}
+.empty-tag{margin-left:auto;font:8px 'Courier New',monospace;color:#7f8b93;white-space:nowrap}
+.journal-header{display:flex;justify-content:space-between;background:#edf2f5;padding:5px 9px;font:8px 'Courier New',monospace;letter-spacing:1px;color:#687e91;border-top:1px solid #c6d2da;border-bottom:1px solid #c6d2da}
+.journal-empty{display:flex;gap:11px;align-items:center;padding:14px 9px;border-bottom:1px dotted #c5ced4;font-size:10px;color:#7c878f}
+.journal-empty>span:first-child{font-size:20px;color:#8b9cab}
+.journal-empty>span:last-child{margin-left:auto}
+.journal-entry{display:flex;justify-content:space-between;gap:18px;padding:14px 9px;border-bottom:1px dotted #c5ced4}
+.journal-entry>div{min-width:0}.journal-entry h3{font-size:12px;overflow-wrap:anywhere}.journal-entry p{font-size:11px;color:#71818c;margin-top:5px;overflow-wrap:anywhere}.journal-entry time{font:9px/1.8 'Courier New',monospace;color:#71818c;white-space:nowrap}
+.end-note{display:flex;gap:7px;align-items:center;color:#7f898e;font:italic 10px Georgia,serif;margin-top:29px}
+.end-note>span{color:#a77c45}
+.end-note>a{margin-left:auto;font:10px Arial,sans-serif;white-space:nowrap}
+footer{display:flex;justify-content:space-between;gap:12px;padding:15px 27px;border-top:1px solid #c1cbd1;background:#f0f3f3;color:#78848c;font-size:9px}
+.skip-link{position:absolute;top:-80px;left:10px;background:white;padding:10px;z-index:2}
+.skip-link:focus{top:10px}
+[hidden]{display:none!important}
+.credits-page{padding:35px;max-width:760px}
+.credits-page h1{font:30px Georgia,serif;margin:20px 0}
+.credits-page h2{font-size:16px;margin:25px 0 8px}
+.credits-page p{margin:12px 0}
+.credits-page li{margin-bottom:10px}
+
+@media(min-width:1400px){.site-shell{margin-top:48px}
+}
+@media(max-width:850px){.site-shell{margin:16px}
+.layout{grid-template-columns:240px minmax(0,1fr);gap:20px;padding:22px 20px}
+.portrait{width:115px;height:150px}
+.profile-intro{gap:12px}
+.profile-summary>p:first-child{font-size:14px}
+.profile-summary{font-size:11px}
+.welcome{padding:23px 20px 16px}
+.welcome h2{font-size:27px}
+.section-title>span{font-size:7px;letter-spacing:0}
+.school{gap:10px}
+.school-heading{flex-wrap:wrap}
+.school-heading h3{font-size:12px}
+.school-logo{width:48px}
+.school-logo img{width:45px;height:50px}
+.activity-period{font-size:7px}
+.empty-tag{display:none}
+}
+@media(max-width:650px){.site-shell{margin:0;border:0;box-shadow:none}
+.masthead{padding:25px 20px;min-height:98px}
+.wordmark{font-size:32px}
+.masthead-right>span:first-child{display:none}
+.masthead-right{max-width:132px;font-size:9px}
+.web-address{font-size:9px}
+.logo-star{font-size:22px;right:-27px}
+.navigation{padding:8px 18px}
+.navigation>div{gap:10px;font-size:11px}
+.nav-note{display:none}
+.breadcrumb{margin:0 18px;font-size:9px}
+.layout{display:flex;flex-direction:column;padding:22px 18px;gap:22px}
+.sidebar{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.profile{padding-bottom:16px}
+.profile-intro{gap:20px}
+.portrait{width:133px;height:145px}
+.profile-summary>p:first-child{font-size:17px;margin-bottom:10px}
+.profile-summary .quiet{font-size:12px}
+.profile-links{text-align:left;padding-top:12px}
+.contact{margin-bottom:0}
+.contact-grid{grid-template-columns:repeat(2,1fr);font-size:12px;gap:12px}
+.sidebar .details,.sidebar .directory,.sidebar-note,.web-badges{display:none}
+.welcome h2{font-size:30px}
+.section-title>span{font-size:8px}
+.school-heading h3{font-size:13px}
+.school-logo{width:57px}
+.school-logo img{width:53px;height:57px}
+.school-info>p{font-size:11px}
+.activity-heading{gap:5px}
+.activity-heading>a{font-size:9px}
+.activity-period{font-size:7px}
+.chart-footer{font-size:8px}
+.end-note{font-size:10px;flex-wrap:wrap;line-height:1.8}
+.end-note>a{margin-left:0;width:100%;margin-top:4px}
+footer{padding:15px 18px;flex-wrap:wrap;font-size:9px}
+footer>span:nth-child(2){order:3;width:100%}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+}
+@media print{body{background:white}
+.site-shell{margin:0;box-shadow:none;border:0}
+.navigation,.web-badges,.directory,.end-note{display:none}
+.layout{display:grid;grid-template-columns:230px 1fr}
+.masthead{background:white;color:#143e80}
+.wordmark,.wordmark>span:first-child{color:#143e80}
+.content-section{break-inside:avoid}
+.chart-scroll{overflow:visible}
+.heatmap{min-width:0}
+}
+
+
+@media(max-width:650px){.activity-body{grid-template-columns:minmax(0,1fr)}}
