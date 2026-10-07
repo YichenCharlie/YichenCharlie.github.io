@@ -19,6 +19,8 @@
 .map-region:hover,.map-region:focus,.map-region.selected{fill:#8ba9ab;outline:none;stroke:#173f62;stroke-width:1.6}
 .map-region.visited:hover,.map-region.visited:focus,.map-region.visited.selected{fill:#a26335}
 .map-decoration{fill:#a5b7b0;stroke:none;pointer-events:none}
+.map-inset{fill:none;stroke:#b8c6c5;stroke-width:1;stroke-dasharray:4 4;pointer-events:none}
+.map-inset-label{font:11px 'Courier New',monospace;fill:#637c87;letter-spacing:1px;pointer-events:none}
 .map-pin{fill:#fff9e8;stroke:#9a5626;stroke-width:2;vector-effect:non-scaling-stroke;pointer-events:none}
 .map-pin-label{font:13px Arial,sans-serif;fill:#6e411f;paint-order:stroke;stroke:#fffefa;stroke-width:4px;stroke-linejoin:round;pointer-events:none}
 .map-compass{position:absolute;right:22px;top:18px;color:#6d8591;text-align:center;font:13px/1.6 Georgia,serif}

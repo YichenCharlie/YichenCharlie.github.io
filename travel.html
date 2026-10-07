@@ -20,7 +20,7 @@
       <section class="travel-intro"><div><p class="travel-kicker">OFFLINE ADVENTURES / A PERSONAL ATLAS</p><h1>A little more of the world.</h1><p>Some of my favorite things happen away from a screen.<br>This is a growing collection of the places I've been.</p></div><div class="travel-stamp" aria-hidden="true"><span>YICHEN'S</span><strong>TRAVEL<br>NOTEBOOK</strong><span>PLACES &amp; MEMORIES</span></div></section>
       <section id="editor" class="travel-editor" aria-labelledby="editor-title" hidden>
         <h2 id="editor-title">Edit your travel map</h2>
-        <p>Click a region on either map, or select places below. These changes are a preview in this browser. Download the file and replace <code>data/travel.json</code> in your project to save them for the website.</p>
+        <p>Click a region on any map, or select places below. These changes are a preview in this browser. Download the file and replace <code>data/travel.json</code> in your project to save them for the website.</p>
         <div class="editor-actions"><button id="download-travel" type="button" disabled>Download travel.json</button><button id="reset-travel" type="button" disabled>Reset to saved places</button><label class="import-label">Import travel.json <input id="import-travel" type="file" accept=".json,application/json" disabled></label></div>
         <p id="editor-status" role="status">Loading saved places…</p>
         <details><summary>Select places from a list</summary><label class="search-label" for="place-search">Find a place</label><input id="place-search" type="search" placeholder="Shanghai, 上海, Japan…"><div id="place-options" class="place-options"></div></details>
@@ -42,8 +42,16 @@
         <p id="world-selection" class="map-selection" aria-live="polite">Explore the map, or browse my places below.</p>
         <div id="world-places" class="visited-places" aria-label="Visited places around the world"></div>
       </section>
+      <section class="atlas-section" aria-labelledby="usa-heading">
+        <h2 id="usa-heading" class="section-title">An unwritten chapter <span>03 / UNITED STATES</span></h2>
+        <div class="atlas-toolbar"><div><h3>Across the United States</h3><p>A place for future travels, one state at a time.</p></div><span id="usa-count" class="atlas-count">Loading…</span></div>
+        <div class="map-frame usa-frame"><svg id="usa-map" viewBox="0 0 960 570" role="group" aria-label="United States travel map" aria-describedby="usa-map-help"></svg><span class="map-corner" aria-hidden="true">FIELD NOTES / 03</span></div>
+        <div class="map-caption"><p id="usa-map-help">Select a state to see its name. Alaska and Hawaii are shown in separate insets.</p><div class="map-legend"><span><i class="visited-key"></i> Visited</span><span><i></i> Not marked</span></div></div>
+        <p id="usa-selection" class="map-selection" aria-live="polite">Explore the map, or browse my places below.</p>
+        <div id="usa-places" class="visited-places" aria-label="Visited states in the United States"></div>
+      </section>
       <div class="travel-closing"><span aria-hidden="true">✳</span><p>More places. More stories. Room for the next adventure.</p><a href="./">Back to my space ↗</a></div>
-      <noscript><p>Enable JavaScript to explore the maps. My recorded places are Shanghai and China.</p></noscript>
+      <noscript><p>Enable JavaScript to explore the maps. Recorded countries: China, Japan and Indonesia. No US visits recorded yet.</p></noscript>
     </main>
     <footer><span>© <span id="year">2026</span> Yichen Feng</span><span>Maps: <a href="https://datav.aliyun.com/portal/school/atlas/area_selector">DataV.GeoAtlas</a> · <a href="https://www.naturalearthdata.com/">Natural Earth</a></span><a href="credits.html">Colophon &amp; credits</a></footer>
   </div>

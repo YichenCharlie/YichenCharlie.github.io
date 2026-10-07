@@ -1,6 +1,7 @@
 "use strict";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
+const mapTypes = ["china", "world", "usa"];
 const editing = new URLSearchParams(location.search).get("edit") === "1";
 const maps = {};
 let saved;
@@ -19,6 +20,7 @@ function svgElement(tag, attributes = {}) {
 
 function regionInfo(feature, type) {
   const p = feature.properties;
+  if (type === "usa") return { id: p.postal, name: p.name_en || p.name, local: p.name_zh };
   const id = String(type === "china" ? p.adcode : p.ADM0_A3);
   return { id, name: type === "china" ? englishNames.get(id) : p.NAME_EN, local: type === "china" ? p.name : p.NAME_ZH, center: p.center || p.centroid };
 }
@@ -27,6 +29,19 @@ function polygons(geometry) {
   if (geometry.type === "Polygon") return [geometry.coordinates];
   if (geometry.type === "MultiPolygon") return geometry.coordinates;
   return [];
+}
+
+function fitUSGroup(features, box, factor) {
+  const raw = ([lon, lat]) => [(lon > 0 ? lon - 360 : lon) * factor, -lat];
+  const points = features.flatMap(f => polygons(f.geometry).flat(2)).map(raw);
+  const xs = points.map(p => p[0]), ys = points.map(p => p[1]);
+  const minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
+  const [left, top, width, height] = box;
+  const scale = Math.min(width / (maxX - minX), height / (maxY - minY));
+  return coordinate => {
+    const [x, y] = raw(coordinate);
+    return [left + width / 2 + (x - (minX + maxX) / 2) * scale, top + height / 2 + (y - (minY + maxY) / 2) * scale];
+  };
 }
 
 function buildMap(type, data) {
@@ -50,10 +65,25 @@ function buildMap(type, data) {
   };
   const regions = new Map();
   const pins = svgElement("g", { "aria-hidden": "true" });
+  let usProjects;
+  if (type === "usa") {
+    usProjects = {
+      mainland: fitUSGroup(features.filter(f => !["AK", "HI"].includes(f.properties.postal)), [50, 20, 860, 350], .8),
+      AK: fitUSGroup(features.filter(f => f.properties.postal === "AK"), [65, 397, 225, 135], .55),
+      HI: fitUSGroup(features.filter(f => f.properties.postal === "HI"), [360, 433, 150, 75], .94),
+    };
+    for (const [x, y, w, h, label] of [[35, 378, 285, 170, "ALASKA"], [335, 405, 200, 135, "HAWAII"]]) {
+      svg.append(svgElement("rect", { x, y, width: w, height: h, class: "map-inset", "aria-hidden": "true" }));
+      const text = svgElement("text", { x: x + 10, y: y + 18, class: "map-inset-label", "aria-hidden": "true" });
+      text.textContent = label;
+      svg.append(text);
+    }
+  }
   for (const feature of features) {
     const info = regionInfo(feature, type);
+    const regionProject = type === "usa" ? (usProjects[info.id] || usProjects.mainland) : project;
     const d = polygons(feature.geometry).map(polygon => polygon.map(ring => ring.map((coordinate, i) => {
-      const [x, y] = project(coordinate);
+      const [x, y] = regionProject(coordinate);
       return `${i ? "L" : "M"}${x.toFixed(2)},${y.toFixed(2)}`;
     }).join(" ") + "Z").join(" ")).join(" ");
     const path = svgElement("path", { d, class: info.name ? "map-region" : "map-decoration", "fill-rule": "evenodd" });
@@ -90,7 +120,7 @@ function selectRegion(type, id) {
 }
 
 function refresh() {
-  for (const type of ["china", "world"]) {
+  for (const type of mapTypes) {
     const { regions, pins, project } = maps[type];
     const selected = new Set(visited[type]);
     pins.replaceChildren();
@@ -101,7 +131,7 @@ function refresh() {
       if (editing) region.path.setAttribute("aria-pressed", String(active));
       region.title.textContent = `${region.name} — ${active ? "Visited" : "Not marked"}`;
       // Pins make small province-level regions such as Shanghai easier to find.
-      if (type === "china" && active && region.center) {
+      if (type === "china" && active && region.center && ["310000", "810000", "820000"].includes(region.id)) {
         const [x, y] = project(region.center);
         pins.append(svgElement("circle", { cx: x, cy: y, r: 4, class: "map-pin" }));
         const label = svgElement("text", { x: x + 9, y: y - 9, class: "map-pin-label" });
@@ -110,7 +140,7 @@ function refresh() {
       }
     }
     const count = selected.size;
-    document.getElementById(`${type}-count`).textContent = type === "china" ? `${count} ${count === 1 ? "region" : "regions"} visited` : `${count} ${count === 1 ? "country / region" : "countries / regions"} visited`;
+    document.getElementById(`${type}-count`).textContent = type === "usa" ? `${count} states / districts visited` : type === "china" ? `${count} ${count === 1 ? "region" : "regions"} visited` : `${count} ${count === 1 ? "country / region" : "countries / regions"} visited`;
     const list = document.getElementById(`${type}-places`);
     list.replaceChildren();
     for (const id of selected) {
@@ -137,7 +167,8 @@ function refresh() {
 function validate(value) {
   if (!value || typeof value !== "object") throw new Error("Choose a valid travel.json file.");
   const clean = {};
-  for (const type of ["china", "world"]) {
+  value = { usa: [], ...value }; // Older exported files have only China and world lists.
+  for (const type of mapTypes) {
     if (!Array.isArray(value[type])) throw new Error(`Missing ${type} list.`);
     if (value[type].some(id => typeof id !== "string" || !maps[type].regions.has(id))) throw new Error(`Unknown place in the ${type} list.`);
     clean[type] = [...new Set(value[type])];
@@ -147,7 +178,7 @@ function validate(value) {
 
 function setupEditor() {
   const options = document.getElementById("place-options");
-  for (const type of ["china", "world"]) {
+  for (const type of mapTypes) {
     for (const region of maps[type].regions.values()) {
       const label = document.createElement("label");
       label.className = "place-option";
@@ -156,7 +187,7 @@ function setupEditor() {
       input.value = region.id;
       input.dataset.map = type;
       const text = document.createElement("span");
-      text.textContent = `${region.name}${region.local ? ` / ${region.local}` : ""} (${type === "china" ? "China" : "World"})`;
+      text.textContent = `${region.name}${region.local ? ` / ${region.local}` : ""} (${type === "usa" ? "USA" : type === "china" ? "China" : "World"})`;
       label.dataset.search = `${text.textContent} ${region.id}`.toLowerCase();
       input.addEventListener("change", () => selectRegion(type, region.id));
       label.append(input, text);
@@ -180,7 +211,7 @@ function setupEditor() {
   document.getElementById("reset-travel").addEventListener("click", () => {
     visited = structuredClone(saved);
     refresh();
-    for (const type of ["china", "world"]) {
+    for (const type of mapTypes) {
       maps[type].regions.forEach(region => region.path.classList.remove("selected"));
       document.getElementById(`${type}-selection`).textContent = "Saved places restored.";
     }
@@ -200,7 +231,7 @@ function setupEditor() {
   });
   document.querySelectorAll(".editor-actions button, #import-travel").forEach(control => { control.disabled = false; });
   document.getElementById("editor-status").textContent = "Saved places loaded. Ready to edit.";
-  for (const type of ["china", "world"]) document.getElementById(`${type}-map-help`).textContent = "Click a region to add or remove it from your travel map.";
+  for (const type of mapTypes) document.getElementById(`${type}-map-help`).textContent = "Click a region to add or remove it from your travel map.";
 }
 
 async function loadJSON(path) {
@@ -209,10 +240,11 @@ async function loadJSON(path) {
   return response.json();
 }
 
-Promise.all([loadJSON("data/maps/china.json"), loadJSON("data/maps/world.json"), loadJSON("data/travel.json")])
-  .then(([china, world, config]) => {
+Promise.all([loadJSON("data/maps/china.json"), loadJSON("data/maps/world.json"), loadJSON("data/maps/usa.json"), loadJSON("data/travel.json")])
+  .then(([china, world, usa, config]) => {
     buildMap("china", china);
     buildMap("world", world);
+    buildMap("usa", usa);
     saved = validate(config);
     visited = structuredClone(saved);
     if (editing) setupEditor();
@@ -222,7 +254,7 @@ Promise.all([loadJSON("data/maps/china.json"), loadJSON("data/maps/world.json"),
     const message = document.getElementById("travel-error");
     message.hidden = false;
     message.textContent = "The travel maps could not be loaded. Please refresh to try again.";
-    for (const type of ["china", "world"]) document.getElementById(`${type}-count`).textContent = "Unavailable";
+    for (const type of mapTypes) document.getElementById(`${type}-count`).textContent = "Unavailable";
     if (editing) document.getElementById("editor-status").textContent = `Unable to edit: ${error.message}`;
     console.error(error);
   });
