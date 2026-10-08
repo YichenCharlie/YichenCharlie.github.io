@@ -56,6 +56,11 @@ button,a,summary{-webkit-tap-highlight-color:transparent}
 .project-heading h3{font-size:14px;line-height:1.5}
 .project-category{font:8px 'Courier New',monospace;color:#7b644d;white-space:nowrap;letter-spacing:.5px}
 .project-entry>p{font-size:12px;line-height:1.75;color:#586c7a}
+.project-highlights{margin:0;padding-left:18px;font-size:12px;line-height:1.8;color:#586c7a;list-style-type:disc}
+.project-highlights li{padding-left:4px;margin-bottom:9px}
+.project-highlights li:last-child{margin-bottom:0}
+.project-highlights li::marker{color:#6494bd}
+.project-highlights strong{color:#304e65;font-weight:600}
 .project-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-top:12px}
 .project-tags{display:flex;flex-wrap:wrap;gap:5px}
 .project-tags span{font-size:9px;padding:2px 7px;background:#edf2f5;border:1px solid #c8d3db;color:#516e86}

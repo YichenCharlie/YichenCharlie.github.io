@@ -38,13 +38,18 @@
   <div class="section-body project-list">
     <article class="project-entry">
       <div class="project-heading"><h3><a href="https://github.com/YichenCharlie/llm-serving-benchmark" target="_blank" rel="noopener noreferrer">LLM Serving Performance Benchmark</a></h3><span class="project-category">ML SYSTEMS</span></div>
-      <p>Benchmarking Qwen2.5-3B-Instruct with vLLM on an RTX 3090. Controlled synthetic workloads explore concurrency, prefix caching, chunked prefill, and KV-cache pressure through throughput and latency measurements.</p>
+      <ul class="project-highlights">
+        <li><strong>Serving benchmarks.</strong> Benchmarked Qwen2.5-3B-Instruct with vLLM on an RTX 3090, measuring throughput and latency under controlled synthetic workloads.</li>
+        <li><strong>Scheduling &amp; memory.</strong> Investigated concurrency scaling, prefix caching, chunked prefill, and KV-cache pressure to understand serving performance trade-offs.</li>
+      </ul>
       <div class="project-footer"><div class="project-tags"><span>Python</span><span>vLLM</span><span>GPU inference</span></div><a href="https://github.com/YichenCharlie/llm-serving-benchmark" target="_blank" rel="noopener noreferrer" aria-label="View LLM Serving Performance Benchmark on GitHub">View on GitHub &#8599;</a></div>
     </article>
     <article class="project-entry">
       <div class="project-heading"><h3><a href="https://github.com/YichenCharlie/financial-text-inference" target="_blank" rel="noopener noreferrer">Financial Text Classification &amp; BERT Inference Optimization</a></h3><span class="project-category">NLP / ML SYSTEMS</span></div>
-      <p>Fine-tuned BERT for company-level Chinese financial news classification, improving validation Macro-F1 from 0.6211 to 0.7548 over a TF-IDF + logistic regression baseline. Reconstructed a BERT encoder layer, verified the full forward path, and used GPU profiling to investigate inference bottlenecks.</p>
-      <p>FP16 mixed precision reduced forward time by 21.3% on an RTX 3090 at batch size 1 with a 512-token input. A separate check at batch size 16 preserved all 1,942 validation predictions.</p>
+      <ul class="project-highlights">
+        <li><strong>BERT classification.</strong> Fine-tuned BERT for company-level Chinese financial news classification, improving validation Macro-F1 from <strong>0.6211 to 0.7548</strong> over a TF-IDF + logistic regression baseline.</li>
+        <li><strong>Inference optimization.</strong> Verified BERT computations and profiled GPU execution. FP16 reduced forward time by <strong>21.3%</strong> on an RTX 3090 (batch 1, 512 tokens), with unchanged predictions across <strong>1,942 validation samples</strong> in a separate batch-16 evaluation.</li>
+      </ul>
       <div class="project-footer"><div class="project-tags"><span>PyTorch</span><span>BERT</span><span>GPU profiling</span><span>Mixed precision</span></div><a href="https://github.com/YichenCharlie/financial-text-inference" target="_blank" rel="noopener noreferrer" aria-label="View Financial Text Classification and BERT Inference Optimization on GitHub">View on GitHub &#8599;</a></div>
     </article>
     <a class="all-projects" href="https://github.com/YichenCharlie/" target="_blank" rel="noopener noreferrer">More on my GitHub profile &#8599;</a>
