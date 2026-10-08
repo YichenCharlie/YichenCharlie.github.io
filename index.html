@@ -42,9 +42,10 @@
       <div class="project-footer"><div class="project-tags"><span>Python</span><span>vLLM</span><span>GPU inference</span></div><a href="https://github.com/YichenCharlie/llm-serving-benchmark" target="_blank" rel="noopener noreferrer" aria-label="View LLM Serving Performance Benchmark on GitHub">View on GitHub &#8599;</a></div>
     </article>
     <article class="project-entry">
-      <div class="project-heading"><h3><a href="https://github.com/YichenCharlie/financial-text-inference" target="_blank" rel="noopener noreferrer">Financial Text Analysis &amp; Inference</a></h3><span class="project-category">NLP</span></div>
-      <p>Company-level classification of Chinese financial news using the FinChina-SA dataset. The project explores data preparation, a TF-IDF + logistic regression baseline, and error analysis.</p>
-      <div class="project-footer"><div class="project-tags"><span>Python</span><span>scikit-learn</span><span>Text classification</span></div><a href="https://github.com/YichenCharlie/financial-text-inference" target="_blank" rel="noopener noreferrer" aria-label="View Financial Text Analysis and Inference on GitHub">View on GitHub &#8599;</a></div>
+      <div class="project-heading"><h3><a href="https://github.com/YichenCharlie/financial-text-inference" target="_blank" rel="noopener noreferrer">Financial Text Classification &amp; BERT Inference Optimization</a></h3><span class="project-category">NLP / ML SYSTEMS</span></div>
+      <p>Fine-tuned BERT for company-level Chinese financial news classification, improving validation Macro-F1 from 0.6211 to 0.7548 over a TF-IDF + logistic regression baseline. Reconstructed a BERT encoder layer, verified the full forward path, and used GPU profiling to investigate inference bottlenecks.</p>
+      <p>FP16 mixed precision reduced forward time by 21.3% on an RTX 3090 at batch size 1 with a 512-token input. A separate check at batch size 16 preserved all 1,942 validation predictions.</p>
+      <div class="project-footer"><div class="project-tags"><span>PyTorch</span><span>BERT</span><span>GPU profiling</span><span>Mixed precision</span></div><a href="https://github.com/YichenCharlie/financial-text-inference" target="_blank" rel="noopener noreferrer" aria-label="View Financial Text Classification and BERT Inference Optimization on GitHub">View on GitHub &#8599;</a></div>
     </article>
     <a class="all-projects" href="https://github.com/YichenCharlie/" target="_blank" rel="noopener noreferrer">More on my GitHub profile &#8599;</a>
   </div>
