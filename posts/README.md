@@ -1,5 +1,17 @@
 # 写随笔
 
+## LeetCode 笔记命名规则
+
+统一使用 `leetcode-hot100-day-序号-主题.md`，全小写，用短横线分隔，序号补足三位。
+
+- 第一篇：`leetcode-hot100-day-001-hash-table.md`
+- 后续示例：`leetcode-hot100-day-002-two-pointers.md`
+- 后续示例：`leetcode-hot100-day-003-sliding-window.md`
+
+后续示例的主题仅用于展示命名方式，按实际学习内容填写即可。日期写在文章顶部的 `date` 中。文件名决定网址，正式发布后尽量保持不变；修订内容时无需改名。
+
+## 编写和预览
+
 1. 复制 `_template.md`，改名为 `my-first-note.md`。文件名使用英文字母、数字和短横线，它会成为文章网址的一部分。
 2. 修改顶部的 `title`（标题）、`date`（YYYY-MM-DD）、`summary`（一句话摘要）。正文使用 Markdown，中英文都支持。
 3. 写作时保留 `draft: true`，发布时改成 `draft: false`。

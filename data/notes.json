@@ -1,8 +1,8 @@
 [
   {
-    "title": "My first note",
-    "date": "2026-10-02",
-    "summary": "A short introduction to this note.",
-    "url": "notes/test-note/"
+    "title": "LeetCode Hot 100 · Day 1",
+    "date": "2026-10-10",
+    "summary": "哈希表：两数之和、字母异位词分组、最长连续序列。",
+    "url": "notes/leetcode-hot100-day-001-hash-table/"
   }
 ]
