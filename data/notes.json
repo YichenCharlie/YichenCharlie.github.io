@@ -1,5 +1,41 @@
 [
   {
+    "title": "LeetCode Hot 100 · Day 7",
+    "date": "2026-10-15",
+    "summary": "除自身以外数组的乘积、和为 K 的子数组、接雨水：前后缀、哈希计数与双指针。",
+    "url": "notes/leetcode-hot100-day-007/"
+  },
+  {
+    "title": "LeetCode Hot 100 · Day 6",
+    "date": "2026-10-15",
+    "summary": "滑动窗口三问：何时扩大、何时缩小、何时更新答案。",
+    "url": "notes/leetcode-hot100-day-006/"
+  },
+  {
+    "title": "LeetCode Hot 100 · Day 5",
+    "date": "2026-10-13",
+    "summary": "轮转数组、下一个排列、缺失的第一个正数：切片、双指针与原地置换。",
+    "url": "notes/leetcode-hot100-day-005/"
+  },
+  {
+    "title": "LeetCode Hot 100 · Day 4",
+    "date": "2026-10-13",
+    "summary": "三数之和：通过递归将 nSum 化为双指针求解的 Two Sum。",
+    "url": "notes/leetcode-hot100-day-004/"
+  },
+  {
+    "title": "LeetCode Hot 100 · Day 3",
+    "date": "2026-10-12",
+    "summary": "移动零、颜色分类、盛最多水的容器：快慢指针、三指针与左右指针。",
+    "url": "notes/leetcode-hot100-day-003/"
+  },
+  {
+    "title": "LeetCode Hot 100 · Day 2",
+    "date": "2026-10-11",
+    "summary": "只出现一次的数字、多数元素：异或、哈希计数与投票法。",
+    "url": "notes/leetcode-hot100-day-002/"
+  },
+  {
     "title": "LeetCode Hot 100 · Day 1",
     "date": "2026-10-10",
     "summary": "哈希表：两数之和、字母异位词分组、最长连续序列。",

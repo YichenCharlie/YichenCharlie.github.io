@@ -7,6 +7,12 @@ from build_notes import build
 
 
 class NotesTests(unittest.TestCase):
+    def test_post_image_paths(self):
+        from build_notes import render
+        output = render({"title": "Image note", "date": "2026-10-15", "summary": "Diagram", "body": "![Rain](images/day-007/rain.svg)\n\n![External](https://example.com/rain.png)"})
+        self.assertIn('src="../../posts/images/day-007/rain.svg"', output)
+        self.assertIn('src="https://example.com/rain.png"', output)
+
     def test_publish_sort_draft_and_remove(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

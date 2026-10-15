@@ -49,6 +49,8 @@ jobs:
           mkdir -p _site
           cp index.html credits.html travel.html .nojekyll _site/
           cp -R assets data notes _site/
+          mkdir -p _site/posts
+          cp -R posts/images _site/posts/
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site
