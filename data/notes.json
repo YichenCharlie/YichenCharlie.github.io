@@ -1,5 +1,47 @@
 [
   {
+    "title": "LeetCode Hot 100 · Day 14",
+    "date": "2026-10-23",
+    "summary": "有效的括号、最小栈、字符串解码：栈的匹配、辅助记录与嵌套处理。",
+    "url": "notes/leetcode-hot100-day-014/"
+  },
+  {
+    "title": "LeetCode Hot 100 · Day 13",
+    "date": "2026-10-22",
+    "summary": "随机链表复制、排序链表、K 个一组翻转：节点映射、归并排序与分组重连。",
+    "url": "notes/leetcode-hot100-day-013/"
+  },
+  {
+    "title": "LeetCode Hot 100 · Day 12",
+    "date": "2026-10-21",
+    "summary": "删除倒数节点、两两交换、两数相加、寻找环入口与重复数：链表操作与快慢指针。",
+    "url": "notes/leetcode-hot100-day-012/"
+  },
+  {
+    "title": "LeetCode Hot 100 · Day 11",
+    "date": "2026-10-19",
+    "summary": "反转、合并、相交、判环与回文链表：节点连接、双指针与快慢指针。",
+    "url": "notes/leetcode-hot100-day-011/"
+  },
+  {
+    "title": "LeetCode Hot 100 · Day 10",
+    "date": "2026-10-19",
+    "summary": "寻找旋转数组最小值、搜索旋转数组、寻找两个有序数组的中位数：有序区间与二分分割。",
+    "url": "notes/leetcode-hot100-day-010/"
+  },
+  {
+    "title": "LeetCode Hot 100 · Day 9",
+    "date": "2026-10-18",
+    "summary": "搜索插入位置、查找元素的首尾位置、搜索二维矩阵：二分查找与边界定位。",
+    "url": "notes/leetcode-hot100-day-009/"
+  },
+  {
+    "title": "LeetCode Hot 100 · Day 8",
+    "date": "2026-10-16",
+    "summary": "矩阵置零、螺旋矩阵、旋转图像、搜索二维矩阵 II：行列标记、边界遍历与转置。",
+    "url": "notes/leetcode-hot100-day-008/"
+  },
+  {
     "title": "LeetCode Hot 100 · Day 7",
     "date": "2026-10-15",
     "summary": "除自身以外数组的乘积、和为 K 的子数组、接雨水：前后缀、哈希计数与双指针。",

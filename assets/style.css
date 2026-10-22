@@ -32,8 +32,8 @@ button,a,summary{-webkit-tap-highlight-color:transparent}
 .profile-handle{font:11px 'Courier New',monospace;color:var(--muted);margin:7px 0 18px}
 .profile-intro{display:flex;gap:18px;align-items:flex-start}
 .portrait{width:139px;height:163px;flex-shrink:0;background:#e8eef0;border:1px solid #b2c1cc;box-shadow:inset 0 0 0 5px #f8faf8;display:flex;align-items:center;justify-content:center;flex-direction:column}
-.portrait svg{width:109px;height:109px;image-rendering:pixelated}
-.portrait>span{font:8px 'Courier New',monospace;letter-spacing:1px;color:#4e6b86}
+.portrait{padding:5px;overflow:hidden}
+.portrait img{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom}
 .profile-summary{padding-top:3px;font-size:12px;line-height:1.5}
 .profile-summary>p:first-child{font:italic 16px/1.35 Georgia,serif;margin-bottom:16px}
 .small-label{font:8px/1.5 'Courier New',monospace;letter-spacing:1px;color:#77828a}

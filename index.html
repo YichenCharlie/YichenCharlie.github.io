@@ -14,7 +14,7 @@
 <div class="breadcrumb"><span>You are here: <a href="./">the internet</a> / <strong>Yichen's space</strong></span><span>Welcome, visitor!</span></div>
 <main id="main" class="layout">
 <aside class="sidebar" aria-label="Profile and links">
-<section class="profile"><h1>Yichen Feng</h1><p class="profile-handle">@YichenCharlie</p><div class="profile-intro"><div class="portrait" aria-label="Profile photo not yet added"><svg viewBox="0 0 120 120" role="img" aria-label="Photo placeholder"><path d="M39 32h42v34H39zM27 69h66v30H27zM46 25h28v7H46zM32 40h7v19h-7zM81 40h7v19h-7zM20 83h7v16h-7zM93 83h7v16h-7z" fill="#90abc4"/></svg><span>PHOTO TO COME</span></div><div class="profile-summary"><p>Welcome to<br>my little corner<br>of the web.</p><span class="small-label">PROFILE</span><p class="quiet">Computer Science<br>&amp; Technology</p></div></div><p class="profile-links">Find me on: <a href="https://github.com/YichenCharlie" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://leetcode.com/u/charlieyichen/" target="_blank" rel="noopener noreferrer">LeetCode</a></p></section>
+<section class="profile"><h1>Yichen Feng</h1><p class="profile-handle">@YichenCharlie</p><div class="profile-intro"><div class="portrait"><img src="assets/portrait.png" alt="Yichen Feng with pigeons" width="1161" height="1355" decoding="async"></div><div class="profile-summary"><p>Welcome to<br>my little corner<br>of the web.</p><span class="small-label">PROFILE</span><p class="quiet">Computer Science<br>&amp; Technology</p></div></div><p class="profile-links">Find me on: <a href="https://github.com/YichenCharlie" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://leetcode.com/u/charlieyichen/" target="_blank" rel="noopener noreferrer">LeetCode</a></p></section>
 <section class="panel contact" id="contact"><h2 class="panel-title">Contacting Yichen</h2><div class="contact-grid"><a href="https://github.com/YichenCharlie" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">⌘</span> GitHub profile ↗</a><a href="https://leetcode.com/u/charlieyichen/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">&lt;/&gt;</span> LeetCode ↗</a><a class="email-link" href="mailto:yf55@rice.edu"><span aria-hidden="true">&#9993;</span> yf55@rice.edu</a><button class="resume-button" type="button" disabled title="Resume download will be available later" aria-label="Resume download not yet available"><span aria-hidden="true">&#9649;</span> R&#233;sum&#233; <span class="resume-status">SOON</span></button></div></section>
 <section class="panel details"><h2 class="panel-title">Yichen's details</h2><dl><div><dt>Name</dt><dd>Yichen Feng</dd></div><div><dt>Education</dt><dd>Computer Science<br>&amp; Technology</dd></div><div><dt>Interests</dt><dd><a href="travel.html">Travel</a> &amp; Gaming</dd></div><div><dt>Location</dt><dd>Shanghai</dd></div><div><dt>Currently</dt><dd>Incoming MECE<br><span class="quiet">Rice · Spring 2027</span></dd></div></dl></section>
 <section class="panel hobbies"><h2 class="panel-title">Beyond the screen</h2><div class="hobby-window"><span class="hobby-icon" aria-hidden="true">&#9992;</span><div><h3>A love for travel</h3><p>Places, little detours &amp; new perspectives.</p><a href="travel.html">Open my travel notebook &#8599;</a></div></div></section>
@@ -37,12 +37,12 @@
   <h2 class="section-title">Things I've been working on <span>04 / PROJECTS</span></h2>
   <div class="section-body project-list">
     <article class="project-entry">
-      <div class="project-heading"><h3><a href="https://github.com/YichenCharlie/llm-serving-benchmark" target="_blank" rel="noopener noreferrer">LLM Serving Performance Benchmark</a></h3><span class="project-category">ML SYSTEMS</span></div>
+      <div class="project-heading"><h3><a href="https://github.com/YichenCharlie/neural-networks-to-cs336" target="_blank" rel="noopener noreferrer">Neural Network Foundations &amp; a Path to CS336</a></h3><span class="project-category">DEEP LEARNING / IN PROGRESS</span></div>
       <ul class="project-highlights">
-        <li><strong>Serving benchmarks.</strong> Benchmarked Qwen2.5-3B-Instruct with vLLM on an RTX 3090, measuring throughput and latency under controlled synthetic workloads.</li>
-        <li><strong>Scheduling &amp; memory.</strong> Investigated concurrency scaling, prefix caching, chunked prefill, and KV-cache pressure to understand serving performance trade-offs.</li>
+        <li><strong>Core implementations.</strong> Built linear regression, binary classification, and a two-layer XOR MLP using PyTorch layers and autograd; verified tensor shapes, parameter counts, and matching predictions after saving and reloading weights.</li>
+        <li><strong>Reproducible experiments.</strong> Consolidated XOR training and decision-boundary visualization into standalone scripts. Currently exploring Fashion-MNIST, with image classification and language modeling planned toward Stanford CS336.</li>
       </ul>
-      <div class="project-footer"><div class="project-tags"><span>Python</span><span>vLLM</span><span>GPU inference</span></div><a href="https://github.com/YichenCharlie/llm-serving-benchmark" target="_blank" rel="noopener noreferrer" aria-label="View LLM Serving Performance Benchmark on GitHub">View on GitHub &#8599;</a></div>
+      <div class="project-footer"><div class="project-tags"><span>Python</span><span>PyTorch</span><span>Neural networks</span><span>Matplotlib</span></div><a href="https://github.com/YichenCharlie/neural-networks-to-cs336" target="_blank" rel="noopener noreferrer" aria-label="View Neural Network Foundations and a Path to CS336 on GitHub">View on GitHub &#8599;</a></div>
     </article>
     <article class="project-entry">
       <div class="project-heading"><h3><a href="https://github.com/YichenCharlie/financial-text-inference" target="_blank" rel="noopener noreferrer">Financial Text Classification &amp; BERT Inference Optimization</a></h3><span class="project-category">NLP / ML SYSTEMS</span></div>
@@ -51,6 +51,14 @@
         <li><strong>Inference optimization.</strong> Verified BERT computations and profiled GPU execution. FP16 reduced forward time by <strong>21.3%</strong> on an RTX 3090 (batch 1, 512 tokens), with unchanged predictions across <strong>1,942 validation samples</strong> in a separate batch-16 evaluation.</li>
       </ul>
       <div class="project-footer"><div class="project-tags"><span>PyTorch</span><span>BERT</span><span>GPU profiling</span><span>Mixed precision</span></div><a href="https://github.com/YichenCharlie/financial-text-inference" target="_blank" rel="noopener noreferrer" aria-label="View Financial Text Classification and BERT Inference Optimization on GitHub">View on GitHub &#8599;</a></div>
+    </article>
+    <article class="project-entry">
+      <div class="project-heading"><h3><a href="https://github.com/YichenCharlie/llm-serving-benchmark" target="_blank" rel="noopener noreferrer">LLM Serving Performance Benchmark</a></h3><span class="project-category">ML SYSTEMS</span></div>
+      <ul class="project-highlights">
+        <li><strong>Serving benchmarks.</strong> Benchmarked Qwen2.5-3B-Instruct with vLLM on an RTX 3090, measuring throughput and latency under controlled synthetic workloads.</li>
+        <li><strong>Scheduling &amp; memory.</strong> Investigated concurrency scaling, prefix caching, chunked prefill, and KV-cache pressure to understand serving performance trade-offs.</li>
+      </ul>
+      <div class="project-footer"><div class="project-tags"><span>Python</span><span>vLLM</span><span>GPU inference</span></div><a href="https://github.com/YichenCharlie/llm-serving-benchmark" target="_blank" rel="noopener noreferrer" aria-label="View LLM Serving Performance Benchmark on GitHub">View on GitHub &#8599;</a></div>
     </article>
     <a class="all-projects" href="https://github.com/YichenCharlie/" target="_blank" rel="noopener noreferrer">More on my GitHub profile &#8599;</a>
   </div>
